@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.domain.data.model.voting;
+package br.edu.infnet.votingapi.domain.data.model.candidate;
 
 import lombok.Getter;
 

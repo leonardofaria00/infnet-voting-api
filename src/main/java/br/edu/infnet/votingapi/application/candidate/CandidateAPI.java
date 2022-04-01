@@ -1,7 +1,7 @@
-package br.edu.infnet.votingapi.application.voting;
+package br.edu.infnet.votingapi.application.candidate;
 
 
-import br.edu.infnet.votingapi.domain.data.model.voting.Candidate;
+import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
