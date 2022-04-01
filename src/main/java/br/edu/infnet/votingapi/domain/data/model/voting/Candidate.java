@@ -1,12 +1,14 @@
 package br.edu.infnet.votingapi.domain.data.model.voting;
 
-import lombok.Data;
+import lombok.Getter;
 
-@Data
 public class Candidate {
-    private String uuid;
-    private String name;
-    private PoliticalParty politicalParty;
+    @Getter
+    private final String uuid;
+    @Getter
+    private final String name;
+    @Getter
+    private final PoliticalParty politicalParty;
 
     public Candidate(final String uuid, final String name, final PoliticalParty politicalParty) {
         this.uuid = uuid;
