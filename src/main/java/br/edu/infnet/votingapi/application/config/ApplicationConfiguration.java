@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 @Configuration
-public class LoggerConfiguration {
+public class ApplicationConfiguration {
     @Bean
     @Scope("prototype")
     public Logger logger(final InjectionPoint injectionPoint) {
