@@ -1,9 +1,7 @@
 package br.edu.infnet.votingapi.application.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
-import br.edu.infnet.votingapi.domain.data.model.candidate.PoliticalParty;
-import br.edu.infnet.votingapi.domain.util.UuidProvider;
-import org.slf4j.Logger;
+import br.edu.infnet.votingapi.domain.service.CandidateService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,18 +12,17 @@ import java.util.List;
 @RestController
 @RequestMapping("/candidate")
 public class CandidateController implements CandidateAPI {
-    private final Logger logger;
+    private final CandidateService candidateService;
 
-    public CandidateController(final Logger logger) {
-        this.logger = logger;
+    public CandidateController(final CandidateService candidateService) {
+        this.candidateService = candidateService;
     }
 
     @Override
     @GetMapping
     public ResponseEntity<List<Candidate>> getCandidates() {
-        logger.info("Find Candidates...");
-        List<Candidate> candidates = List.of(new Candidate(UuidProvider.get(), "Marina", PoliticalParty.PT));
-        logger.info("Return Candidates...");
+        List<Candidate> candidates = candidateService.getCandidates();
+
         return ResponseEntity.ok().body(candidates);
     }
 }
