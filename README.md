@@ -1,2 +1,3 @@
-# voting-api
-Permitir que os usuários votem, dê várias opções
+# Infrastructure as code - iac from the Voting API project
+
+## Terraform to AWS
