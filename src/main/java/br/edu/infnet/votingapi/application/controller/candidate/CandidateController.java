@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.application.candidate;
+package br.edu.infnet.votingapi.application.controller.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import br.edu.infnet.votingapi.domain.service.CandidateService;
@@ -20,7 +20,7 @@ public class CandidateController implements CandidateAPI {
 
     @Override
     @GetMapping
-    public ResponseEntity<List<Candidate>> getCandidates() {
+    public ResponseEntity<List<Candidate>> getCandidates() throws Exception {
         List<Candidate> candidates = candidateService.getCandidates();
 
         return ResponseEntity.ok().body(candidates);

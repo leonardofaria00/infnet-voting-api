@@ -15,7 +15,7 @@ public class CandidateServiceImpl implements CandidateService {
     }
 
     @Override
-    public List<Candidate> getCandidates() {
+    public List<Candidate> getCandidates() throws Exception {
         return candidateRepository.getCandidates();
     }
 }

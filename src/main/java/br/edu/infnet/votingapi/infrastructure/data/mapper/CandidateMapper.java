@@ -7,6 +7,8 @@ import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
 import org.mapstruct.ReportingPolicy;
 
+import java.util.List;
+
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CandidateMapper {
 
@@ -15,5 +17,5 @@ public interface CandidateMapper {
             @Mapping(target = "name", source = "candidateDocument.name"),
             @Mapping(target = "politicalParty", source = "candidateDocument.politicalParty")
     })
-    Candidate convertCandidateDocumentToCandidate(CandidateDocument candidateDocument);
+    List<Candidate> convertCandidateDocumentToCandidate(List<CandidateDocument> candidateDocument);
 }

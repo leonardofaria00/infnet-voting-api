@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.application.candidate;
+package br.edu.infnet.votingapi.application.controller.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import org.junit.jupiter.api.DisplayName;
@@ -21,7 +21,7 @@ class CandidateControllerTest {
 
     @Test
     @DisplayName("Deve retornar uma lista de candidatos")
-    void getCandidates() {
+    void getCandidates() throws Exception {
         ResponseEntity<List<Candidate>> response = candidateController.getCandidates();
         assertEquals(response.getStatusCode().value(), 200);
         for (Candidate candidate : Objects.requireNonNull(response.getBody())) {
