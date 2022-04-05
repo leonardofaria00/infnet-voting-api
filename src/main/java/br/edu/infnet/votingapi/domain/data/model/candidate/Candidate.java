@@ -1,9 +1,15 @@
 package br.edu.infnet.votingapi.domain.data.model.candidate;
 
+import javax.validation.constraints.NotNull;
+
 public class Candidate {
 
     private String uuid;
+
+    @NotNull
     private String name;
+
+    @NotNull
     private PoliticalParty politicalParty;
 
     public Candidate(final String uuid, final String name, final PoliticalParty politicalParty) {

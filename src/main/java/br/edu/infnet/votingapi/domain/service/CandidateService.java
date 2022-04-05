@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CandidateService {
     List<Candidate> getCandidates() throws Exception;
+
+    Candidate createCandidate(Candidate candidate);
 }

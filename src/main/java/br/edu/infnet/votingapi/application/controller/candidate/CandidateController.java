@@ -1,11 +1,11 @@
 package br.edu.infnet.votingapi.application.controller.candidate;
 
+import br.edu.infnet.votingapi.application.data.candidate.CandidateRequest;
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import br.edu.infnet.votingapi.domain.service.CandidateService;
+import br.edu.infnet.votingapi.infrastructure.data.mapper.CandidateMapper;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,16 +13,23 @@ import java.util.List;
 @RequestMapping("/candidate")
 public class CandidateController implements CandidateAPI {
     private final CandidateService candidateService;
+    private final CandidateMapper candidateMapper;
 
-    public CandidateController(final CandidateService candidateService) {
+    public CandidateController(final CandidateService candidateService, final CandidateMapper candidateMapper) {
         this.candidateService = candidateService;
+        this.candidateMapper = candidateMapper;
     }
 
     @Override
     @GetMapping
     public ResponseEntity<List<Candidate>> getCandidates() throws Exception {
-        List<Candidate> candidates = candidateService.getCandidates();
+        return ResponseEntity.ok().body(candidateService.getCandidates());
+    }
 
-        return ResponseEntity.ok().body(candidates);
+    @Override
+    @PostMapping
+    public ResponseEntity<Candidate> createCandidate(@RequestBody final CandidateRequest candidateRequest) {
+        final Candidate candidate = candidateMapper.convertCandidateRequestToCandidate(candidateRequest);
+        return ResponseEntity.ok().body(candidateService.createCandidate(candidate));
     }
 }

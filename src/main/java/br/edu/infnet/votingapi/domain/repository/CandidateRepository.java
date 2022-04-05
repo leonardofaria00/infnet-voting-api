@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface CandidateRepository {
     List<Candidate> getCandidates() throws Exception;
+
+    Candidate createCandidate(Candidate candidate);
 }
