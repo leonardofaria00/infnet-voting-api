@@ -14,8 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
-class CandidateControllerTest {
-
+class GetCandidateControllerTest {
     @Autowired
     private CandidateController candidateController;
 
