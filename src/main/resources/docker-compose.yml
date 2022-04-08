@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+    zipkin:
+        image: openzipkin/zipkin
+        restart: always
+        ports:
+            - "9411:9411"
+    prometheus:
+        image: prom/prometheus
+        restart: always
+        ports:
+            - "9090:9090"
