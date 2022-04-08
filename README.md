@@ -1,7 +1,7 @@
 # Voting API
-Permitir que os usuários votem em seu candidato e vejam o candidato mais votado.
+Permitir que os eleitores votem em seu candidato e vejam o candidato mais votado.
 
-## Integrantes
+## Members
 
 Leonardo Faria dos Santos
 
