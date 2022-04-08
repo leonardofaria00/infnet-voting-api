@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/candidate")
+@RequestMapping("/voting/v1/candidate")
 public class CandidateController implements CandidateAPI {
     private final CandidateService candidateService;
     private final CandidateMapper candidateMapper;
