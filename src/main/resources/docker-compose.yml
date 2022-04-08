@@ -6,3 +6,8 @@ services:
         restart: always
         ports:
             - "9411:9411"
+    prometheus:
+        image: prom/prometheus
+        restart: always
+        ports:
+            - "9090:9090"
