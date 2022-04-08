@@ -13,13 +13,6 @@ Alan Delon Lazaro Silva Junqueira
 
 ## Tasks
 
-
-### Terraform
-- [Infrastructure as code - iac](https://github.com/leonardofaria00/voting-api/tree/iac-voting-api)
-
-### Build Pipeline
-- [CI/CD Voting API](https://gitlab.com/nidiosdolfini/teste)
-
 ### GET Candidate
 <img src="evidencias/GET%20CANDIDATOS.png" alt="Candidates List">
 
@@ -34,3 +27,13 @@ doning
 
 ### Zipkin
 <img src="evidencias/Zipkim.png" alt="Zipkin is a distributed tracing system">
+
+### Terraform
+- [Infrastructure as code - iac](https://github.com/leonardofaria00/voting-api/tree/iac-voting-api)
+
+### Build Pipeline
+- [CI/CD Voting API](https://gitlab.com/nidiosdolfini/teste)
+
+<img src="evidencias/pipeline-docker.png" alt="Pipeline Docker">
+
+<img src="evidencias/pipeline-passed.png" alt="Pipeline Finished">
