@@ -73,7 +73,7 @@ public class CandidateRepositoryImpl implements CandidateRepository {
             final CandidateDocument document = candidateDocumentMapper.convertCandidateDocumentToChange(candidateDocument, candidate);
             document.setUpdatedDate(LocalDateTimeProvider.get());
             final CandidateDocument save = candidateMongoRepository.save(document);
-            logger.info("[SUCCESS] to change candidate with name: {}", save.getName());
+            logger.info("[SUCCESS] to change candidate with name: {} to {}", candidateDocument.getName(), save.getName());
             return candidateMapper.convertCandidateDocumentToCandidate(save);
         } catch (final Exception exception) {
             logger.error("[Error] to change candidate uuid: {} -> {}", uuid, exception.getMessage());
