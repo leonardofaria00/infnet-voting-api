@@ -32,4 +32,13 @@ public class CandidateController implements CandidateAPI {
         final Candidate candidate = candidateMapper.convertCandidateRequestToCandidate(candidateRequest);
         return ResponseEntity.ok().body(candidateService.createCandidate(candidate));
     }
+
+    @Override
+    @PutMapping("/{uuid}")
+    public ResponseEntity<Candidate> changeCandidate(
+            @RequestBody final CandidateRequest candidateRequest,
+            @PathVariable final String uuid) {
+        final Candidate candidate = candidateMapper.convertCandidateRequestToCandidate(candidateRequest);
+        return ResponseEntity.ok().body(candidateService.changeCandidate(candidate, uuid));
+    }
 }

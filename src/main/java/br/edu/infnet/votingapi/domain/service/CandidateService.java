@@ -8,4 +8,6 @@ public interface CandidateService {
     List<Candidate> getCandidates() throws Exception;
 
     Candidate createCandidate(Candidate candidate);
+
+    Candidate changeCandidate(Candidate candidate, String uuid);
 }

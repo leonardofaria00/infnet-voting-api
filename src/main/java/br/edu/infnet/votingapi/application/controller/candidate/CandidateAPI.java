@@ -9,5 +9,8 @@ import java.util.List;
 
 public interface CandidateAPI {
     ResponseEntity<List<Candidate>> getCandidates() throws Exception;
+
     ResponseEntity<Candidate> createCandidate(CandidateRequest candidateRequest);
+
+    ResponseEntity<Candidate> changeCandidate(CandidateRequest candidateRequest, String uuid);
 }

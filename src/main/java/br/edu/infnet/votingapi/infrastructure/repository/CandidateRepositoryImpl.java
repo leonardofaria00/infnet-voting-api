@@ -64,4 +64,26 @@ public class CandidateRepositoryImpl implements CandidateRepository {
             throw new BusinessException(format("[Error] to INSERT Candidate: %s", exception.getMessage()));
         }
     }
+
+    @Override
+    public Candidate changeCandidate(final Candidate candidate, final String uuid) {
+        try {
+            final CandidateDocument candidateDocument = findCandidateByUuid(uuid);
+            final CandidateDocument document = candidateDocumentMapper.convertCandidateDocumentToChange(candidateDocument, candidate);
+            document.setUpdatedDate(LocalDateTimeProvider.get());
+            return candidateMapper.convertCandidateDocumentToCandidate(candidateMongoRepository.save(document));
+        } catch (final Exception exception) {
+            logger.error("[Error] to change Candidate uuid: {} -> {}", uuid, exception.getMessage());
+            throw new BusinessException(format("[Error] to change Candidate uuid: %s -> %s", uuid, exception.getMessage()));
+        }
+    }
+
+    private CandidateDocument findCandidateByUuid(final String uuid) {
+        try {
+            return candidateMongoRepository.findByUuid(uuid);
+        } catch (final Exception exception) {
+            logger.error("[Error] to find Candidate uuid: {} -> {}", uuid, exception.getMessage());
+            throw new BusinessException(format("[Error] to find Candidate uuid: %s -> %s", uuid, exception.getMessage()));
+        }
+    }
 }
