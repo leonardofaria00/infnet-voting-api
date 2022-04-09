@@ -41,11 +41,11 @@ public class CandidateRepositoryImpl implements CandidateRepository {
         try {
             final List<CandidateDocument> documentList = candidateMongoRepository.findAll();
             final List<Candidate> candidates = candidateMapper.convertListCandidateDocumentToListCandidate(documentList);
-            logger.info("Returning {} Candidates", candidates.size());
+            logger.info("[SUCCESS] to find list of candidates");
             return candidates;
         } catch (final Exception exception) {
-            logger.error("[Error] to find Candidate: {}", exception.getMessage());
-            throw new BusinessException(format("[Error] to find Candidate: %s", exception.getMessage()));
+            logger.error("[Error] to find candidates: {}", exception.getMessage());
+            throw new BusinessException(format("[Error] to find Candidates: %s", exception.getMessage()));
         }
     }
 
@@ -57,11 +57,12 @@ public class CandidateRepositoryImpl implements CandidateRepository {
             candidateDocument.setUuid(UuidProvider.get());
             candidateDocument.setCreatedDate(localDateTime);
             candidateDocument.setUpdatedDate(localDateTime);
-
-            return candidateMapper.convertCandidateDocumentToCandidate(candidateMongoRepository.insert(candidateDocument));
+            final CandidateDocument document = candidateMongoRepository.insert(candidateDocument);
+            logger.info("[SUCCESS] to insert candidate with name: {}", document.getName());
+            return candidateMapper.convertCandidateDocumentToCandidate(document);
         } catch (final Exception exception) {
-            logger.error("[Error] to INSERT Candidate: {}", exception.getMessage());
-            throw new BusinessException(format("[Error] to INSERT Candidate: %s", exception.getMessage()));
+            logger.error("[Error] to INSERT candidate: {}", exception.getMessage());
+            throw new BusinessException(format("[Error] to INSERT candidate: %s", exception.getMessage()));
         }
     }
 
@@ -71,10 +72,12 @@ public class CandidateRepositoryImpl implements CandidateRepository {
             final CandidateDocument candidateDocument = findCandidateByUuid(uuid);
             final CandidateDocument document = candidateDocumentMapper.convertCandidateDocumentToChange(candidateDocument, candidate);
             document.setUpdatedDate(LocalDateTimeProvider.get());
-            return candidateMapper.convertCandidateDocumentToCandidate(candidateMongoRepository.save(document));
+            final CandidateDocument save = candidateMongoRepository.save(document);
+            logger.info("[SUCCESS] to change candidate with name: {}", save.getName());
+            return candidateMapper.convertCandidateDocumentToCandidate(save);
         } catch (final Exception exception) {
-            logger.error("[Error] to change Candidate uuid: {} -> {}", uuid, exception.getMessage());
-            throw new BusinessException(format("[Error] to change Candidate uuid: %s -> %s", uuid, exception.getMessage()));
+            logger.error("[Error] to change candidate uuid: {} -> {}", uuid, exception.getMessage());
+            throw new BusinessException(format("[Error] to change candidate uuid: %s -> %s", uuid, exception.getMessage()));
         }
     }
 
@@ -82,8 +85,8 @@ public class CandidateRepositoryImpl implements CandidateRepository {
         try {
             return candidateMongoRepository.findByUuid(uuid);
         } catch (final Exception exception) {
-            logger.error("[Error] to find Candidate uuid: {} -> {}", uuid, exception.getMessage());
-            throw new BusinessException(format("[Error] to find Candidate uuid: %s -> %s", uuid, exception.getMessage()));
+            logger.error("[Error] to find candidate uuid: {} -> {}", uuid, exception.getMessage());
+            throw new BusinessException(format("[Error] to find candidate uuid: %s -> %s", uuid, exception.getMessage()));
         }
     }
 }
