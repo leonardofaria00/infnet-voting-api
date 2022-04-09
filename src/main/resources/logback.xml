@@ -1,0 +1,28 @@
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+<!--    Papertrail log display-->
+    <appender class="ch.qos.logback.classic.net.SyslogAppender" name="PAPERTRAIL">
+        <syslogHost>logs.papertrailapp.com</syslogHost>
+        <port>34842</port>
+        <facility>USER</facility>
+        <suffixPattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta}
+            %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint}
+            %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}
+        </suffixPattern>
+    </appender>
+
+<!--    Terminal log display-->
+    <appender class="ch.qos.logback.core.ConsoleAppender" name="STDOUT">
+        <encoder>
+            <pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>
+        </encoder>
+    </appender>
+
+    <springProfile name="dev">
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="PAPERTRAIL"/>
+        </root>
+    </springProfile>
+</configuration>
