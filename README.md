@@ -1,6 +1,6 @@
 # Microservice Voting API Spring Rest
 
-Permitir que os eleitores votem em seu candidato e vejam o candidato mais votado.
+Permitir que os eleitores votem em seu candidato e veja o candidato mais votado.
 
 ## Members
 
