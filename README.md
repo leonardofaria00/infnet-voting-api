@@ -1,5 +1,6 @@
-# Voting API
-Permitir que os eleitores votem em seu candidato e vejam o candidato mais votado.
+# Microservice Voting API Spring Rest
+
+Permitir que os eleitores votem em seu candidato e veja o candidato mais votado.
 
 ## Members
 
@@ -14,27 +15,49 @@ Alan Delon Lazaro Silva Junqueira
 ## Tasks
 
 ### GET Candidate
-<img src="evidencias/GET%20CANDIDATOS.png" alt="Candidates List">
+
+<img src="evidence/get-candidates.png" alt="Candidates List">
+
+### POST Candidate
+
+<img src="evidence/post-candidate.png" alt="POST Candidate">
+
+### PUT Candidate
+
+<img src="evidence/put-candidate.png" alt="PUT Candidate">
 
 ### Actuator
-<img src="evidencias/Actuator.png" alt="Actuator">
+
+<img src="evidence/actuator.png" alt="Actuator">
 
 ### Prometheus
-<img src="evidencias/prometheus-integration.png" alt="Prometheus Integration">
+
+<img src="evidence/prometheus-integration.png" alt="Prometheus Integration">
+<img src="evidence/prometheus-status.png" alt="Prometheus Status">
 
 ### Papertrail
-doning
+
+<img src="evidence/papertrail-logback.png" alt="Papertrail Logger">
 
 ### Zipkin
-<img src="evidencias/Zipkim.png" alt="Zipkin is a distributed tracing system">
+
+<img src="evidence/zipkin.png" alt="Zipkin">
+<img src="evidence/zipkin-details.png" alt="Zipkin Details">
 
 ### Terraform
+
 - [Infrastructure as code - iac](https://github.com/leonardofaria00/voting-api/tree/iac-voting-api)
 
+  <img src="evidence/main-tf.png" alt="Terraform main">
+  <img src="evidence/ec2-tf.png" alt="Terraform EC2 AWS">
+  <img src="evidence/vpc-tf.png" alt="Terraform VPC AWS">
+
 ### Build Pipeline
+
 - [CI/CD Voting API](https://gitlab.com/nidiosdolfini/teste)
 
-<img src="evidencias/pipeline-docker.png" alt="Pipeline Docker">
+<img src="evidence/pipeline-docker.png" alt="Pipeline Docker">
 
 ### Build Pipeline Finished
-<img src="evidencias/pipeline-passed.png" alt="Pipeline Finished">
+
+<img src="evidence/pipeline-passed.png" alt="Pipeline Finished">

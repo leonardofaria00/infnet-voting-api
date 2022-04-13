@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.domain.service;
+package br.edu.infnet.votingapi.domain.service.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 
@@ -8,4 +8,6 @@ public interface CandidateService {
     List<Candidate> getCandidates() throws Exception;
 
     Candidate createCandidate(Candidate candidate);
+
+    Candidate changeCandidate(Candidate candidate, String uuid);
 }

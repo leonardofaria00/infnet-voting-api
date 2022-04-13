@@ -1,7 +1,7 @@
-package br.edu.infnet.votingapi.domain.service;
+package br.edu.infnet.votingapi.domain.service.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
-import br.edu.infnet.votingapi.domain.repository.CandidateRepository;
+import br.edu.infnet.votingapi.domain.repository.candidate.CandidateRepository;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
@@ -29,6 +29,12 @@ public class CandidateServiceImpl implements CandidateService {
     public Candidate createCandidate(final Candidate candidate) {
         validateMandatoryFields(candidate);
         return candidateRepository.createCandidate(candidate);
+    }
+
+    @Override
+    public Candidate changeCandidate(final Candidate candidate, final String uuid) {
+        validateMandatoryFields(candidate);
+        return candidateRepository.changeCandidate(candidate, uuid);
     }
 
     private void validateMandatoryFields(final Object object) {
