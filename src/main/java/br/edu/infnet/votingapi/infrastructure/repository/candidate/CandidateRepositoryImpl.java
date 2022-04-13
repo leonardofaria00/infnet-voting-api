@@ -1,13 +1,13 @@
-package br.edu.infnet.votingapi.infrastructure.repository;
+package br.edu.infnet.votingapi.infrastructure.repository.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import br.edu.infnet.votingapi.domain.exception.BusinessException;
-import br.edu.infnet.votingapi.domain.repository.CandidateRepository;
+import br.edu.infnet.votingapi.domain.repository.candidate.CandidateRepository;
 import br.edu.infnet.votingapi.domain.util.UuidProvider;
-import br.edu.infnet.votingapi.infrastructure.data.mapper.CandidateDocumentMapper;
-import br.edu.infnet.votingapi.infrastructure.data.mapper.CandidateMapper;
+import br.edu.infnet.votingapi.infrastructure.data.mapper.candidate.CandidateDocumentMapper;
+import br.edu.infnet.votingapi.infrastructure.data.mapper.candidate.CandidateMapper;
 import br.edu.infnet.votingapi.infrastructure.data.model.CandidateDocument;
-import br.edu.infnet.votingapi.infrastructure.repository.persistence.CandidateMongoRepository;
+import br.edu.infnet.votingapi.infrastructure.repository.candidate.persistence.CandidateMongoRepository;
 import br.edu.infnet.votingapi.infrastructure.util.LocalDateTimeProvider;
 import org.slf4j.Logger;
 import org.springframework.stereotype.Component;

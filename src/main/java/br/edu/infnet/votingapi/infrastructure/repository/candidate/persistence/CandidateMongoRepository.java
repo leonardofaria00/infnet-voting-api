@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.infrastructure.repository.persistence;
+package br.edu.infnet.votingapi.infrastructure.repository.candidate.persistence;
 
 import br.edu.infnet.votingapi.infrastructure.data.model.CandidateDocument;
 import org.bson.types.ObjectId;

@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.domain.repository;
+package br.edu.infnet.votingapi.domain.repository.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 
