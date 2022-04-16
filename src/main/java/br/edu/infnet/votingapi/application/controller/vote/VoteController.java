@@ -16,7 +16,7 @@ public class VoteController implements VoteAPI {
     private final VoteService voteService;
     private final VoteMapper voteMapper;
 
-    public VoteController(VoteService voteService, final VoteMapper voteMapper) {
+    public VoteController(final VoteService voteService, final VoteMapper voteMapper) {
         this.voteService = voteService;
         this.voteMapper = voteMapper;
     }

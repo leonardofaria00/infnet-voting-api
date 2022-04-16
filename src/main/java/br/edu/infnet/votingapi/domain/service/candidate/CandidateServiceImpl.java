@@ -2,6 +2,7 @@ package br.edu.infnet.votingapi.domain.service.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
 import br.edu.infnet.votingapi.domain.repository.candidate.CandidateRepository;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Service;
 
 import javax.validation.ConstraintViolation;
@@ -14,10 +15,15 @@ import java.util.Set;
 public class CandidateServiceImpl implements CandidateService {
     private final CandidateRepository candidateRepository;
     private final Validator validator;
+    private final Logger logger;
 
-    public CandidateServiceImpl(final CandidateRepository candidateRepository, final Validator validator) {
+    public CandidateServiceImpl(
+            final CandidateRepository candidateRepository,
+            final Validator validator,
+            final Logger logger) {
         this.candidateRepository = candidateRepository;
         this.validator = validator;
+        this.logger = logger;
     }
 
     @Override
@@ -40,6 +46,7 @@ public class CandidateServiceImpl implements CandidateService {
     private void validateMandatoryFields(final Object object) {
         final Set<ConstraintViolation<Object>> violations = validator.validate(object);
         if (!violations.isEmpty()) {
+            logger.error("Dados incorretos. Bad Request");
             throw new ConstraintViolationException(violations);
         }
     }
