@@ -1,7 +1,7 @@
 package br.edu.infnet.votingapi.infrastructure.data.mapper.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.Candidate;
-import br.edu.infnet.votingapi.infrastructure.data.model.CandidateDocument;
+import br.edu.infnet.votingapi.infrastructure.data.model.candidate.CandidateDocument;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;

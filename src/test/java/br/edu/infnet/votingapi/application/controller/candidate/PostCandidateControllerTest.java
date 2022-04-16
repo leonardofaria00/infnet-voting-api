@@ -23,7 +23,10 @@ class PostCandidateControllerTest {
     @Test
     @DisplayName("Deve criar um candidato")
     void createCandidate() {
-        final CandidateRequest candidateRequest = CandidateRequest.builder().name("Leonardo").politicalParty(PoliticalParty.PSB).build();
+        final CandidateRequest candidateRequest = CandidateRequest.builder().
+                name("Leonardo")
+                .politicalParty(PoliticalParty.PSB)
+                .build();
         ResponseEntity<Candidate> response = candidateController.createCandidate(candidateRequest);
         assertEquals(response.getStatusCode().value(), 200);
         assertEquals(Objects.requireNonNull(response.getBody()).getName(), candidateRequest.getName());

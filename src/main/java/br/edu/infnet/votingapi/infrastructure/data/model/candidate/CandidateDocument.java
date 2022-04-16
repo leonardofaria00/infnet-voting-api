@@ -1,4 +1,4 @@
-package br.edu.infnet.votingapi.infrastructure.data.model;
+package br.edu.infnet.votingapi.infrastructure.data.model.candidate;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

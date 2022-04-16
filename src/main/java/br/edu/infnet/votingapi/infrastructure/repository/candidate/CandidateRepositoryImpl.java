@@ -6,7 +6,7 @@ import br.edu.infnet.votingapi.domain.repository.candidate.CandidateRepository;
 import br.edu.infnet.votingapi.domain.util.UuidProvider;
 import br.edu.infnet.votingapi.infrastructure.data.mapper.candidate.CandidateDocumentMapper;
 import br.edu.infnet.votingapi.infrastructure.data.mapper.candidate.CandidateMapper;
-import br.edu.infnet.votingapi.infrastructure.data.model.CandidateDocument;
+import br.edu.infnet.votingapi.infrastructure.data.model.candidate.CandidateDocument;
 import br.edu.infnet.votingapi.infrastructure.repository.candidate.persistence.CandidateMongoRepository;
 import br.edu.infnet.votingapi.infrastructure.util.LocalDateTimeProvider;
 import org.slf4j.Logger;

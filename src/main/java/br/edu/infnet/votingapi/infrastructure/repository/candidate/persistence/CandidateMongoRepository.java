@@ -1,6 +1,6 @@
 package br.edu.infnet.votingapi.infrastructure.repository.candidate.persistence;
 
-import br.edu.infnet.votingapi.infrastructure.data.model.CandidateDocument;
+import br.edu.infnet.votingapi.infrastructure.data.model.candidate.CandidateDocument;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
