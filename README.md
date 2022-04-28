@@ -26,6 +26,14 @@ Alan Delon Lazaro Silva Junqueira
 
 <img src="evidence/put-candidate.png" alt="PUT Candidate">
 
+### Collection Candidate
+
+<img src="evidence/collection_candidate.png" alt="Collection Candidate">
+
+### Collection Vote
+
+<img src="evidence/collection_vote.png" alt="Collection Vote">
+
 ### Actuator
 
 <img src="evidence/actuator.png" alt="Actuator">
