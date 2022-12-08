@@ -48,7 +48,7 @@ public class VoteRepositoryImpl implements VoteRepository {
     private Vote saveVote(final Vote vote) {
         try {
             final LocalDateTime localDateTime = LocalDateTimeProvider.get();
-            VoteDocument voteDocument = voteMapper.convertVoteToVoteDocument(vote);
+            final VoteDocument voteDocument = voteMapper.convertVoteToVoteDocument(vote);
             voteDocument.setAmountVote(BigInteger.ONE);
             voteDocument.setCreateDate(localDateTime);
             voteDocument.setUpdateDate(localDateTime);

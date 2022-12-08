@@ -69,7 +69,7 @@ public class CandidateRepositoryImpl implements CandidateRepository {
     @Override
     public Candidate changeCandidate(final Candidate candidate, final String uuid) {
         try {
-            final CandidateDocument candidateDocument = findCandidateByUuid(uuid);
+            final CandidateDocument candidateDocument = getCandidateDocumentByUuid(uuid);
             final CandidateDocument document = candidateDocumentMapper.convertCandidateDocumentToChange(candidateDocument, candidate);
             document.setUpdatedDate(LocalDateTimeProvider.get());
             final CandidateDocument save = candidateMongoRepository.save(document);
@@ -81,7 +81,13 @@ public class CandidateRepositoryImpl implements CandidateRepository {
         }
     }
 
-    private CandidateDocument findCandidateByUuid(final String uuid) {
+    @Override
+    public Candidate getCandidateByUuid(final String uuid) {
+        final CandidateDocument candidateDocument = getCandidateDocumentByUuid(uuid);
+        return candidateMapper.convertCandidateDocumentToCandidate(candidateDocument);
+    }
+
+    private CandidateDocument getCandidateDocumentByUuid(final String uuid) {
         try {
             return candidateMongoRepository.findByUuid(uuid);
         } catch (final Exception exception) {

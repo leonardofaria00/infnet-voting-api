@@ -43,6 +43,11 @@ public class CandidateServiceImpl implements CandidateService {
         return candidateRepository.changeCandidate(candidate, uuid);
     }
 
+    @Override
+    public Candidate getCandidateByUuid(final String uuid) {
+        return candidateRepository.getCandidateByUuid(uuid);
+    }
+
     private void validateMandatoryFields(final Object object) {
         final Set<ConstraintViolation<Object>> violations = validator.validate(object);
         if (!violations.isEmpty()) {
