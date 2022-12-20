@@ -1,6 +1,7 @@
 package br.edu.infnet.votingapi.application.data.candidate;
 
 import br.edu.infnet.votingapi.domain.data.model.candidate.PoliticalParty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
@@ -10,7 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CandidateRequest {
 
+    @Schema(description = "Name", example = "Tiririca")
     private String name;
+
+    @Schema(description = "Political Party", example = "PSOL")
     private PoliticalParty politicalParty;
 
     public String getName() {

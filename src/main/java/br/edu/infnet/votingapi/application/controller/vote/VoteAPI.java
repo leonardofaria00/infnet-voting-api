@@ -24,8 +24,8 @@ public interface VoteAPI {
                             )
                     ),
                     @ApiResponse(
-                            responseCode = "404",
-                            description = "Not Found",
+                            responseCode = HttpResponse.STATUS_INTERNAL_SERVER_ERROR,
+                            description = HttpResponse.DESCRIPITION_INTERNAL_SERVER_ERROR,
                             content = @Content
                     ),
                     @ApiResponse(
