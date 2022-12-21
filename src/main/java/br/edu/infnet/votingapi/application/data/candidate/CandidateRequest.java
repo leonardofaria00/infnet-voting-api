@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CandidateRequest {
 
-    @Schema(description = "Name", example = "Tiririca")
+    @Schema(description = "Candidate name", example = "Tiririca")
     private String name;
 
-    @Schema(description = "Political Party", example = "PSOL")
+    @Schema(description = "Political Party")
     private PoliticalParty politicalParty;
 
     public String getName() {

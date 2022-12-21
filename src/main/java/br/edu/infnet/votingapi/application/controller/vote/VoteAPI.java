@@ -16,7 +16,7 @@ public interface VoteAPI {
             responses = {
                     @ApiResponse(
                             responseCode = HttpResponse.STATUS_OK,
-                            description = HttpResponse.DESCRIPITION_OK,
+                            description = HttpResponse.DESCRIPTION_OK,
                             content = @Content(
                                     schema = @Schema(
                                             implementation = Vote.class
@@ -25,12 +25,12 @@ public interface VoteAPI {
                     ),
                     @ApiResponse(
                             responseCode = HttpResponse.STATUS_INTERNAL_SERVER_ERROR,
-                            description = HttpResponse.DESCRIPITION_INTERNAL_SERVER_ERROR,
+                            description = HttpResponse.DESCRIPTION_INTERNAL_SERVER_ERROR,
                             content = @Content
                     ),
                     @ApiResponse(
-                            responseCode = "500",
-                            description = "Internal Server Error",
+                            responseCode = HttpResponse.STATUS_INTERNAL_SERVER_ERROR,
+                            description = HttpResponse.DESCRIPTION_INTERNAL_SERVER_ERROR,
                             content = @Content
                     )
             }
