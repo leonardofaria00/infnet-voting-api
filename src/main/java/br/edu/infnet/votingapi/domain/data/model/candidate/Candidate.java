@@ -1,14 +1,19 @@
 package br.edu.infnet.votingapi.domain.data.model.candidate;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import javax.validation.constraints.NotNull;
 
 public class Candidate {
 
+    @Schema(description = "Vote uuid", example = "f49adda3-25ee-4521-84fc-1a257a25d55d")
     private String uuid;
 
+    @Schema(description = "Name", example = "Tiririca")
     @NotNull
     private String name;
 
+    @Schema(description = "Political Party", example = "PSOL")
     @NotNull
     private PoliticalParty politicalParty;
 
